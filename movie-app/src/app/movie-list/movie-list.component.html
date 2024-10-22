@@ -1,0 +1,15 @@
+<div *ngIf="loading">Loading movies...</div>
+
+<div *ngIf="!loading && movies.length === 0">No movies found.</div>
+
+<div *ngIf="!loading && movies.length > 0">
+  <h2>Movie List</h2>
+  <ul>
+    <li *ngFor="let movie of movies">
+      <a [routerLink]="['/movie', movie.imdbID]">
+        {{ movie.Title }} ({{ movie.Year }})
+      </a>
+      <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+    </li>
+  </ul>
+</div>

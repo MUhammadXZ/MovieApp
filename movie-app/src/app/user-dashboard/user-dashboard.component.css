@@ -1,0 +1,17 @@
+.user-dashboard {
+  padding: 20px;
+}
+
+.movie-list {
+  margin-top: 20px;
+}
+
+.movie-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 0;
+}

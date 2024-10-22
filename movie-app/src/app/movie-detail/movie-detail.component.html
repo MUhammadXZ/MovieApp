@@ -1,0 +1,13 @@
+<!-- movie-detail.component.html -->
+<div *ngIf="loading">Loading movie details...</div>
+
+<div *ngIf="movie">
+  <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
+  <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+  <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+  <p><strong>Director:</strong> {{ movie.Director }}</p>
+  <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+  <p><strong>Rating:</strong> {{ movie.imdbRating }}</p>
+
+  <button (click)="rateMovie(movie.id)">Rate Movie</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="user-dashboard">
+  <h1>User Dashboard</h1>
+
+  <!-- Search Bar -->
+  <app-search-bar (search)="searchMovies()"></app-search-bar>
+
+  <!-- Movie List -->
+  <div class="movie-list">
+    <h2>Available Movies</h2>
+    <div *ngFor="let movie of movies" class="movie-item">
+      <h3>{{ movie.title }}</h3>
+      <p><strong>Year:</strong> {{ movie.year }}</p>
+      <p><strong>Genre:</strong> {{ movie.genre }}</p>
+      <p><strong>Rating:</strong> {{ movie.rating }}</p>
+    </div>
+
+    <div *ngIf="movies.length === 0">
+      <p>No movies found.</p>
+    </div>
+  </div>
+</div>

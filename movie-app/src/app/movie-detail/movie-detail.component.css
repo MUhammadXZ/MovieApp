@@ -1,0 +1,16 @@
+.movie-detail {
+  padding: 20px;
+}
+
+.movie-detail img {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie-detail h2 {
+  margin: 10px 0;
+}
+
+.movie-detail p {
+  margin: 5px 0;
+}

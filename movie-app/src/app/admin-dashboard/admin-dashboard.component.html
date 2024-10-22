@@ -1,0 +1,47 @@
+<div class="admin-dashboard">
+  <h1>Admin Dashboard</h1>
+
+  <!-- Movie Addition Form -->
+  <form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+    <div>
+      <label for="title">Movie Title:</label>
+      <input id="title" formControlName="title" placeholder="Movie Title" required />
+      <div *ngIf="movieForm.get('title')?.invalid && (movieForm.get('title')?.touched || movieForm.get('title')?.dirty)">
+        <small class="error">Title is required.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="year">Year:</label>
+      <input id="year" type="number" formControlName="year" placeholder="Year" required />
+      <div *ngIf="movieForm.get('year')?.invalid && (movieForm.get('year')?.touched || movieForm.get('year')?.dirty)">
+        <small class="error">Year is required.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="genre">Genre:</label>
+      <input id="genre" formControlName="genre" placeholder="Genre" required />
+      <div *ngIf="movieForm.get('genre')?.invalid && (movieForm.get('genre')?.touched || movieForm.get('genre')?.dirty)">
+        <small class="error">Genre is required.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="movieForm.invalid">Add Movie</button>
+  </form>
+
+  <!-- Movie List -->
+  <div class="movie-list">
+    <h2>Movie List</h2>
+    <div *ngFor="let movie of movies" class="movie-item">
+      <h3>{{ movie.Title }}</h3>
+      <p><strong>Year:</strong> {{ movie.Year }}</p>
+      <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+      <button (click)="removeMovie(movie.imdbID)">Remove</button>
+    </div>
+
+    <div *ngIf="movies.length === 0">
+      <p>No movies found.</p>
+    </div>
+  </div>
+</div>

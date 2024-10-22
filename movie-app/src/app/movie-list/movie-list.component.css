@@ -1,0 +1,22 @@
+.movie-list {
+  padding: 20px;
+}
+
+.movie-list h2 {
+  margin-bottom: 15px;
+}
+
+.movie-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.movie-list li {
+  margin-bottom: 15px;
+}
+
+.movie-list img {
+  width: 100px;
+  height: auto;
+  margin-left: 10px;
+}
